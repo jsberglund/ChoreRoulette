@@ -3,12 +3,22 @@
 #import "ParseStarterProjectViewController.h"
 #import "MainViewController.h"
 #import "SecretConstants.h"
+
+#import "CRLTask.h"
+#import "CRLTeam.h"
+#import "CRLUser.h"
+
 @implementation ParseStarterProjectAppDelegate
 
 
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Register subclasses for use in Parse
+    [CRLTask registerSubclass];
+    [CRLTeam registerSubclass];
+    [CRLUser registerSubclass];
+    
     [Parse setApplicationId:kParseAppId
                   clientKey:kParseClientKey];
     

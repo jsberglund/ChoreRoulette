@@ -10,12 +10,77 @@
 #import <Parse/Parse.h>
 
 #import "CRLLoginViewController.h"
+#import "CRLTeam.h"
+#import "CRLUser.h"
 
 @interface MainViewController ()
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *teamNameTextField;
 
 @end
 
 @implementation MainViewController
+- (IBAction)showUserTeam:(id)sender {
+    //update team
+    CRLUser *currentCRLUser = (CRLUser *)[PFUser currentUser];
+    
+//    [currentCRLUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+//        CRLUser *currentCRLUser = (CRLUser *)object;
+//        CRLTeam *team = currentCRLUser.team;
+//        NSLog(@"================> fetched: %@", team);
+//    }];
+    
+    NSLog(@"================> %@", currentCRLUser.team.objectId);
+    
+    PFQuery *query = [PFQuery queryWithClassName:[CRLTeam parseClassName]];
+    [query getObjectInBackgroundWithId:currentCRLUser.team.objectId block:^(PFObject *team, NSError *error) {
+        // Do something with the returned PFObject in the gameScore variable.
+        NSLog(@"%@", team);
+        currentCRLUser.team = (CRLTeam *)team;
+        
+        //we can even change it, yo
+        //currentCRLUser.team.teamName = @"CHANGED";
+        //[currentCRLUser.team saveInBackground];
+    }];
+    
+    //    CRLUser *currentCRLUser = (CRLUser *)[PFUser currentUser];
+//    NSLog(@"================> %@", currentCRLUser.email);
+//    NSLog(@"================> %@", currentCRLUser.team);
+//    
+    
+}
+- (IBAction)createTeamTapped:(id)sender {
+    CRLTeam *newTeam = [CRLTeam object];
+    newTeam.teamName = self.teamNameTextField.text;
+    [newTeam saveInBackground];
+    NSLog(@"================> %@", @"Team Saved");
+}
+- (IBAction)joinTeamTapped:(id)sender {
+    //current user
+    CRLUser *currentCRLUser = (CRLUser *)[PFUser currentUser];
+    
+    //get team based on name?
+    PFQuery *query = [PFQuery queryWithClassName:[CRLTeam parseClassName]];
+    [query whereKey:@"teamName" equalTo:self.teamNameTextField.text];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d teams.", objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object);
+                CRLTeam *foundTeam = (CRLTeam *)object;
+                currentCRLUser[@"team"] = foundTeam;
+                [currentCRLUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    NSLog(@"================> %@", @"SAVE SUCEEDED");
+                }];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

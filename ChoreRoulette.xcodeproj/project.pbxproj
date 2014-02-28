@@ -34,6 +34,13 @@
 		648614A518C05E1900542791 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614A418C05E1900542791 /* main.m */; };
 		648614A918C05E1A00542791 /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648614A818C05E1A00542791 /* Cedar-iOS.framework */; };
 		648614AB18C05E1A00542791 /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 648614AA18C05E1A00542791 /* ExampleSpec.mm */; };
+		648614B218C05EFD00542791 /* CRLTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614B118C05EFD00542791 /* CRLTask.m */; };
+		648614B318C05EFD00542791 /* CRLTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614B118C05EFD00542791 /* CRLTask.m */; };
+		648614B618C061BA00542791 /* CRLTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614B518C061BA00542791 /* CRLTeam.m */; };
+		648614B718C061BA00542791 /* CRLTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614B518C061BA00542791 /* CRLTeam.m */; };
+		648614B918C0638D00542791 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648614B818C0638D00542791 /* MainViewController.xib */; };
+		648614BC18C065BD00542791 /* CRLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614BB18C065BD00542791 /* CRLUser.m */; };
+		648614BD18C065BD00542791 /* CRLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614BB18C065BD00542791 /* CRLUser.m */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
@@ -81,6 +88,13 @@
 		648614A718C05E1900542791 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		648614A818C05E1A00542791 /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cedar-iOS.framework"; path = "Frameworks/Cedar-iOS.framework"; sourceTree = "<group>"; };
 		648614AA18C05E1A00542791 /* ExampleSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ExampleSpec.mm; sourceTree = "<group>"; };
+		648614B018C05EFD00542791 /* CRLTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRLTask.h; path = model/CRLTask.h; sourceTree = "<group>"; };
+		648614B118C05EFD00542791 /* CRLTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRLTask.m; path = model/CRLTask.m; sourceTree = "<group>"; };
+		648614B418C061BA00542791 /* CRLTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLTeam.h; sourceTree = "<group>"; };
+		648614B518C061BA00542791 /* CRLTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLTeam.m; sourceTree = "<group>"; };
+		648614B818C0638D00542791 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		648614BA18C065BD00542791 /* CRLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLUser.h; sourceTree = "<group>"; };
+		648614BB18C065BD00542791 /* CRLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLUser.m; sourceTree = "<group>"; };
 		64D4B1F918C050D500F85CFC /* SecretConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretConstants.h; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -170,6 +184,7 @@
 		09ABC07713A1D52D009C3FCF /* ChoreRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				648614AF18C05E9F00542791 /* model */,
 				6432705918C042E50015F968 /* login */,
 				09ABC08013A1D52D009C3FCF /* ParseStarterProjectAppDelegate.h */,
 				09ABC08113A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m */,
@@ -205,6 +220,7 @@
 			children = (
 				6432705518C042D20015F968 /* MainViewController.h */,
 				6432705618C042D20015F968 /* MainViewController.m */,
+				648614B818C0638D00542791 /* MainViewController.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -238,6 +254,19 @@
 				648614A618C05E1900542791 /* Specs-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		648614AF18C05E9F00542791 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				648614B018C05EFD00542791 /* CRLTask.h */,
+				648614B118C05EFD00542791 /* CRLTask.m */,
+				648614B418C061BA00542791 /* CRLTeam.h */,
+				648614B518C061BA00542791 /* CRLTeam.m */,
+				648614BA18C065BD00542791 /* CRLUser.h */,
+				648614BB18C065BD00542791 /* CRLUser.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +340,7 @@
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				09ABC08B13A1D52E009C3FCF /* ParseStarterProjectViewController.xib in Resources */,
+				648614B918C0638D00542791 /* MainViewController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
@@ -335,6 +365,9 @@
 			files = (
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
+				648614B618C061BA00542791 /* CRLTeam.m in Sources */,
+				648614B218C05EFD00542791 /* CRLTask.m in Sources */,
+				648614BC18C065BD00542791 /* CRLUser.m in Sources */,
 				09ABC08813A1D52E009C3FCF /* ParseStarterProjectViewController.m in Sources */,
 				6432705C18C043240015F968 /* CRLLoginViewController.m in Sources */,
 				6432705718C042D20015F968 /* MainViewController.m in Sources */,
@@ -345,8 +378,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648614B718C061BA00542791 /* CRLTeam.m in Sources */,
+				648614BD18C065BD00542791 /* CRLUser.m in Sources */,
 				648614A518C05E1900542791 /* main.m in Sources */,
 				648614AB18C05E1A00542791 /* ExampleSpec.mm in Sources */,
+				648614B318C05EFD00542791 /* CRLTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
