@@ -41,6 +41,12 @@
 		648614B918C0638D00542791 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648614B818C0638D00542791 /* MainViewController.xib */; };
 		648614BC18C065BD00542791 /* CRLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614BB18C065BD00542791 /* CRLUser.m */; };
 		648614BD18C065BD00542791 /* CRLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614BB18C065BD00542791 /* CRLUser.m */; };
+		648614C418C27ECE00542791 /* CreateEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614C218C27ECE00542791 /* CreateEditTaskViewController.m */; };
+		648614C518C27ECE00542791 /* CreateEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614C218C27ECE00542791 /* CreateEditTaskViewController.m */; };
+		648614C618C27ECE00542791 /* CreateEditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648614C318C27ECE00542791 /* CreateEditTaskViewController.xib */; };
+		648614C718C27ECE00542791 /* CreateEditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648614C318C27ECE00542791 /* CreateEditTaskViewController.xib */; };
+		648614CB18C284F200542791 /* CRLNetworkAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614CA18C284F200542791 /* CRLNetworkAccessManager.m */; };
+		648614CC18C284F200542791 /* CRLNetworkAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 648614CA18C284F200542791 /* CRLNetworkAccessManager.m */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
@@ -95,6 +101,11 @@
 		648614B818C0638D00542791 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		648614BA18C065BD00542791 /* CRLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLUser.h; sourceTree = "<group>"; };
 		648614BB18C065BD00542791 /* CRLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLUser.m; sourceTree = "<group>"; };
+		648614C118C27ECE00542791 /* CreateEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateEditTaskViewController.h; path = view/CreateEditTaskViewController.h; sourceTree = "<group>"; };
+		648614C218C27ECE00542791 /* CreateEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateEditTaskViewController.m; path = view/CreateEditTaskViewController.m; sourceTree = "<group>"; };
+		648614C318C27ECE00542791 /* CreateEditTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateEditTaskViewController.xib; path = view/CreateEditTaskViewController.xib; sourceTree = "<group>"; };
+		648614C918C284F200542791 /* CRLNetworkAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLNetworkAccessManager.h; sourceTree = "<group>"; };
+		648614CA18C284F200542791 /* CRLNetworkAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLNetworkAccessManager.m; sourceTree = "<group>"; };
 		64D4B1F918C050D500F85CFC /* SecretConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretConstants.h; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -195,6 +206,8 @@
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 				6432705818C042D70015F968 /* view */,
 				64D4B1F918C050D500F85CFC /* SecretConstants.h */,
+				648614C918C284F200542791 /* CRLNetworkAccessManager.h */,
+				648614CA18C284F200542791 /* CRLNetworkAccessManager.m */,
 			);
 			name = ChoreRoulette;
 			path = ParseStarterProject;
@@ -221,6 +234,9 @@
 				6432705518C042D20015F968 /* MainViewController.h */,
 				6432705618C042D20015F968 /* MainViewController.m */,
 				648614B818C0638D00542791 /* MainViewController.xib */,
+				648614C118C27ECE00542791 /* CreateEditTaskViewController.h */,
+				648614C218C27ECE00542791 /* CreateEditTaskViewController.m */,
+				648614C318C27ECE00542791 /* CreateEditTaskViewController.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -342,6 +358,7 @@
 				09ABC08B13A1D52E009C3FCF /* ParseStarterProjectViewController.xib in Resources */,
 				648614B918C0638D00542791 /* MainViewController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
+				648614C618C27ECE00542791 /* CreateEditTaskViewController.xib in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
@@ -352,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648614C718C27ECE00542791 /* CreateEditTaskViewController.xib in Resources */,
 				648614A318C05E1900542791 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648614CB18C284F200542791 /* CRLNetworkAccessManager.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
 				648614B618C061BA00542791 /* CRLTeam.m in Sources */,
@@ -371,6 +390,7 @@
 				09ABC08813A1D52E009C3FCF /* ParseStarterProjectViewController.m in Sources */,
 				6432705C18C043240015F968 /* CRLLoginViewController.m in Sources */,
 				6432705718C042D20015F968 /* MainViewController.m in Sources */,
+				648614C418C27ECE00542791 /* CreateEditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,8 +401,10 @@
 				648614B718C061BA00542791 /* CRLTeam.m in Sources */,
 				648614BD18C065BD00542791 /* CRLUser.m in Sources */,
 				648614A518C05E1900542791 /* main.m in Sources */,
+				648614CC18C284F200542791 /* CRLNetworkAccessManager.m in Sources */,
 				648614AB18C05E1A00542791 /* ExampleSpec.mm in Sources */,
 				648614B318C05EFD00542791 /* CRLTask.m in Sources */,
+				648614C518C27ECE00542791 /* CreateEditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

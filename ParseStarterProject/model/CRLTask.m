@@ -10,14 +10,16 @@
 #import <Parse/PFObject+Subclass.h>
 
 @implementation CRLTask
++ (NSString *)parseClassName {
+    return @"UserTask";
+}
 @dynamic taskId;
 @dynamic name;
 @dynamic taskDescription;
-@dynamic taskDuration;
 @dynamic team;
 @dynamic createdBy;
+@dynamic categoryTag;
+@dynamic taskDurationMinutes;
+@dynamic value;
 
-+ (NSString *)parseClassName {
-    return @"Task";
-}
 @end

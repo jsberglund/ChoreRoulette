@@ -12,13 +12,38 @@
 #import "CRLLoginViewController.h"
 #import "CRLTeam.h"
 #import "CRLUser.h"
+#import "CreateEditTaskViewController.h"
+#import "CRLNetworkAccessManager.h"
 
 @interface MainViewController ()
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *teamNameTextField;
+@property (strong, nonatomic) CRLNetworkAccessManager *apiManager;
 
 @end
 
 @implementation MainViewController
+
+- (IBAction)createTaskTapped:(id)sender {
+    CreateEditTaskViewController *createTaskController = [[CreateEditTaskViewController alloc] init];
+    
+    createTaskController.apiManager = self.apiManager;
+    
+    [self.apiManager getTasksForTeam:[CRLUser currentUser].team Completion:^(NSArray *tasks, NSError *error) {
+        
+        NSMutableArray *taskCategories = [@[] mutableCopy];
+        for (CRLTask *task in tasks) {
+            [taskCategories addObject:task.categoryTag];
+        }
+        
+        createTaskController.existingCategoryTags = taskCategories;
+        [self presentViewController:createTaskController animated:YES completion:^{
+            //nada yet
+        }];
+    }];
+    
+    
+    
+}
 - (IBAction)getUsersInTeamTapped:(id)sender {
     
     PFQuery *innerQuery = [PFQuery queryWithClassName:[CRLTeam parseClassName]];
@@ -89,6 +114,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.apiManager = [[CRLNetworkAccessManager alloc] init];
     }
     return self;
 }

@@ -12,4 +12,6 @@
 @interface CRLUser : PFUser<PFSubclassing>
 @property (strong, nonatomic) CRLTeam *team;
 @property (strong, nonatomic) NSString *nickName;
+
++ (CRLUser *)currentUser;
 @end

@@ -11,4 +11,9 @@
 @implementation CRLUser 
 @dynamic team;
 @dynamic nickName;
+
++ (CRLUser *)currentUser
+{
+    return (CRLUser *)[PFUser currentUser];
+}
 @end

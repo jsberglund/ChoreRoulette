@@ -17,8 +17,8 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *taskDescription;
 @property (strong, nonatomic) NSString *categoryTag;
-@property (nonatomic) int *value;
-@property (nonatomic) NSTimeInterval *taskDuration;
+@property int value;
+@property int taskDurationMinutes;
 @property (strong, nonatomic) CRLTeam *team;
 @property (strong, nonatomic) CRLUser *createdBy;
 @end
