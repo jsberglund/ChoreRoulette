@@ -15,6 +15,7 @@
 @dynamic taskDescription;
 @dynamic taskDuration;
 @dynamic team;
+@dynamic createdBy;
 
 + (NSString *)parseClassName {
     return @"Task";

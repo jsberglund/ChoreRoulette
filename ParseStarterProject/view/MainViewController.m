@@ -19,15 +19,22 @@
 @end
 
 @implementation MainViewController
+- (IBAction)getUsersInTeamTapped:(id)sender {
+    
+    PFQuery *innerQuery = [PFQuery queryWithClassName:[CRLTeam parseClassName]];
+    [innerQuery whereKey:@"teamName" equalTo:self.teamNameTextField.text];
+    PFQuery *query = [PFQuery queryWithClassName:[CRLUser parseClassName]];
+    [query whereKey:@"team" matchesQuery:innerQuery];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        // users now in team with specified team name
+        NSLog(@"================> %lu", (unsigned long)users.count);
+    }];
+
+    
+}
 - (IBAction)showUserTeam:(id)sender {
     //update team
     CRLUser *currentCRLUser = (CRLUser *)[PFUser currentUser];
-    
-//    [currentCRLUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-//        CRLUser *currentCRLUser = (CRLUser *)object;
-//        CRLTeam *team = currentCRLUser.team;
-//        NSLog(@"================> fetched: %@", team);
-//    }];
     
     NSLog(@"================> %@", currentCRLUser.team.objectId);
     
@@ -41,11 +48,6 @@
         //currentCRLUser.team.teamName = @"CHANGED";
         //[currentCRLUser.team saveInBackground];
     }];
-    
-    //    CRLUser *currentCRLUser = (CRLUser *)[PFUser currentUser];
-//    NSLog(@"================> %@", currentCRLUser.email);
-//    NSLog(@"================> %@", currentCRLUser.team);
-//    
     
 }
 - (IBAction)createTeamTapped:(id)sender {

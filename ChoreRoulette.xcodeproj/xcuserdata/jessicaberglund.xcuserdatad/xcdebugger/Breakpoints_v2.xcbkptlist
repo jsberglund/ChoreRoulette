@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParseStarterProject/view/MainViewController.m"
-            timestampString = "415268673.917376"
+            timestampString = "415392890.410012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "-viewDidAppear:"
             landmarkType = "5">
          </BreakpointContent>
