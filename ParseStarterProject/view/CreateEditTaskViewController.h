@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CRLNetworkAccessManager.h"
+#import <MLPAutoCompleteTextField.h>
 
 @interface CreateEditTaskViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *taskNameText;
@@ -19,4 +20,5 @@
 
 @property (strong, nonatomic) NSArray *existingCategoryTags;
 @property (strong, nonatomic) CRLNetworkAccessManager *apiManager;
+@property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *autocompleteTextField;
 @end

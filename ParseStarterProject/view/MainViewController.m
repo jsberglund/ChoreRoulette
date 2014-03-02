@@ -32,7 +32,9 @@
         
         NSMutableArray *taskCategories = [@[] mutableCopy];
         for (CRLTask *task in tasks) {
-            [taskCategories addObject:task.categoryTag];
+            if (task.categoryTag) {
+                [taskCategories addObject:task.categoryTag];
+            }
         }
         
         createTaskController.existingCategoryTags = taskCategories;

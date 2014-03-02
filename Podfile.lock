@@ -1,1 +1,10 @@
+PODS:
+  - MLPAutoCompleteTextField (1.5)
+
+DEPENDENCIES:
+  - MLPAutoCompleteTextField (~> 1.5)
+
+SPEC CHECKSUMS:
+  MLPAutoCompleteTextField: 8baf7b9a78cbc6022a50f985c1c56784248821fe
+
 COCOAPODS: 0.29.0

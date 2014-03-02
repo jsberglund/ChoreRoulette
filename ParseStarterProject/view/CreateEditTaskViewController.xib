@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateEditTaskViewController">
             <connections>
+                <outlet property="autocompleteTextField" destination="7in-WC-JoI" id="Yky-Yo-h5j"/>
                 <outlet property="categoryTagText" destination="7in-WC-JoI" id="piL-W3-hjq"/>
                 <outlet property="descriptionText" destination="VVf-xD-JX4" id="kZM-QM-9uO"/>
                 <outlet property="durationText" destination="xIf-2R-Tb8" id="LCg-pq-Qgd"/>
@@ -83,11 +84,16 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7in-WC-JoI">
-                    <rect key="frame" x="203" y="214" width="97" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7in-WC-JoI" customClass="MLPAutoCompleteTextField">
+                    <rect key="frame" x="143" y="214" width="157" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="autoCompleteDataSource" destination="-1" id="6Xl-hI-X8r"/>
+                        <outlet property="autoCompleteDelegate" destination="-1" id="Rvj-5L-bkY"/>
+                        <outlet property="delegate" destination="-1" id="guw-zg-jyZ"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
