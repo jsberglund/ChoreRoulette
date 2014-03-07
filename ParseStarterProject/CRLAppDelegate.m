@@ -1,5 +1,6 @@
 #import <Parse/Parse.h>
-#import "ParseStarterProjectAppDelegate.h"
+#import <MMDrawerController/MMDrawerController.h>
+#import "CRLAppDelegate.h"
 #import "ParseStarterProjectViewController.h"
 #import "MainViewController.h"
 #import "SecretConstants.h"
@@ -8,7 +9,11 @@
 #import "CRLTeam.h"
 #import "CRLUser.h"
 
-@implementation ParseStarterProjectAppDelegate
+@interface CRLAppDelegate ()
+@property (strong, nonatomic) MMDrawerController * drawerController;
+@end
+
+@implementation CRLAppDelegate
 
 
 #pragma mark - UIApplicationDelegate
@@ -41,9 +46,7 @@
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
     
     // Override point for customization after application launch.
-    UIViewController *mainViewCont = [[MainViewController alloc] init];
-    self.window.rootViewController = mainViewCont;
-    [self.window makeKeyAndVisible];
+    [self setUpApp];
 
     if (application.applicationState != UIApplicationStateBackground) {
         // Track an app open here if we launch with a push, unless
@@ -63,6 +66,54 @@
     return YES;
 }
 
+
+-(void)setUpApp
+{
+    UIViewController *mainViewCont = [[MainViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewCont];
+    
+    UIViewController * leftSideDrawerViewController = [[UIViewController alloc] init];
+    
+//    self.drawerController = [[MMDrawerController alloc]
+//                                             initWithCenterViewController:navigationController
+//                                             leftDrawerViewController:leftSideDrawerViewController];
+    
+
+    UINavigationController * leftSideNavController = [[UINavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
+//    [leftSideNavController setRestorationIdentifier:@"MMExampleLeftNavigationControllerRestorationKey"];
+    self.drawerController = [[MMDrawerController alloc]
+                             initWithCenterViewController:navigationController
+                             leftDrawerViewController:leftSideNavController];
+    
+    [self.drawerController setShowsShadow:NO];
+    
+    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+//    [self.drawerController
+//     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+//         MMDrawerControllerDrawerVisualStateBlock block;
+//         block = [[MMExampleDrawerVisualStateManager sharedManager]
+//                  drawerVisualStateBlockForDrawerSide:drawerSide];
+//         if(block){
+//             block(drawerController, drawerSide, percentVisible);
+//         }
+//     }];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+                                          green:173.0/255.0
+                                           blue:234.0/255.0
+                                          alpha:1.0];
+    [self.window setTintColor:tintColor];
+    [self.window setRootViewController:self.drawerController];
+    
+    
+    
+//    self.window.rootViewController = drawerController;
+    [self.window makeKeyAndVisible];
+}
 /*
  
 ///////////////////////////////////////////////////////////

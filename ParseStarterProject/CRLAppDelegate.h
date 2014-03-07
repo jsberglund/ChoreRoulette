@@ -1,6 +1,6 @@
 @class MainViewController;
 
-@interface ParseStarterProjectAppDelegate : NSObject <UIApplicationDelegate> {
+@interface CRLAppDelegate : NSObject <UIApplicationDelegate> {
 
 }
 

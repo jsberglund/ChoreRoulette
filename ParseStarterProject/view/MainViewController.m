@@ -8,6 +8,9 @@
 
 #import "MainViewController.h"
 #import <Parse/Parse.h>
+#import <MMDrawerController/MMDrawerBarButtonItem.h>
+#import "UIViewController+MMDrawerController.h"
+
 
 #import "CRLLoginViewController.h"
 #import "CRLTeam.h"
@@ -136,7 +139,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+	[self setupLeftMenuButton];
+}
+
+-(void)setupLeftMenuButton{
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -226,7 +234,10 @@
     NSLog(@"User dismissed the signUpViewController");
 }
 
-
+#pragma mark - Button Handlers
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
 
 
 - (void)didReceiveMemoryWarning
