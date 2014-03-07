@@ -13,6 +13,7 @@
 #import "CRLTeam.h"
 #import "CRLUser.h"
 #import "CreateEditTaskViewController.h"
+#import "TasksListViewController.h"
 #import "CRLNetworkAccessManager.h"
 
 @interface MainViewController ()
@@ -22,6 +23,17 @@
 @end
 
 @implementation MainViewController
+
+- (IBAction)showTasksTapped:(id)sender
+{
+    TasksListViewController *tasksListController = [[TasksListViewController alloc] init];
+    
+    [self.apiManager getTasksForTeam:[CRLUser currentUser].team Completion:^(NSArray *tasks, NSError *error) {
+        tasksListController.tasksArray = tasks;
+        
+        [self presentViewController:tasksListController animated:YES completion:nil];
+    }];
+}
 
 - (IBAction)createTaskTapped:(id)sender {
     CreateEditTaskViewController *createTaskController = [[CreateEditTaskViewController alloc] init];

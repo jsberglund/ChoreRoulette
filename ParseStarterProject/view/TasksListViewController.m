@@ -7,6 +7,7 @@
 //
 
 #import "TasksListViewController.h"
+#import "CRLTask.h"
 
 @interface TasksListViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -26,6 +27,24 @@
 
 # pragma mark TableView Delegate
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.tasksArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    CRLTask *task = [self.tasksArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = task.name;
+    return cell;
+}
 
 - (void)viewDidLoad
 {
@@ -38,5 +57,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

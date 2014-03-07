@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TasksListViewController : UIViewController
+@interface TasksListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *tasksArray;
 
