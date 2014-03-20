@@ -8,6 +8,7 @@
 #import "CRLTask.h"
 #import "CRLTeam.h"
 #import "CRLUser.h"
+#import "CRLTaskActivity.h"
 
 @interface CRLAppDelegate ()
 @property (strong, nonatomic) MMDrawerController * drawerController;
@@ -23,6 +24,7 @@
     [CRLTask registerSubclass];
     [CRLTeam registerSubclass];
     [CRLUser registerSubclass];
+    [CRLTaskActivity registerSubclass];
     
     [Parse setApplicationId:kParseAppId
                   clientKey:kParseClientKey];

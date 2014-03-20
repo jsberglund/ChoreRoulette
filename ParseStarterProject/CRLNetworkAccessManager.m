@@ -11,6 +11,7 @@
 #import "CRLTeam.h"
 @implementation CRLNetworkAccessManager
 
+#pragma mark - Tasks
 -(void)getTasksForTeam:(CRLTeam *)team Completion:(void(^)(NSArray *tasks, NSError *error))completion
 {
     PFQuery *query = [PFQuery queryWithClassName:[CRLTask parseClassName]];
@@ -29,5 +30,12 @@
     }];
 }
 
+#pragma mark - Task Activity
+-(void)saveTaskActivity:(CRLTaskActivity *)taskActivity Completion:(void (^)(BOOL, NSError *))completion
+{
+    [taskActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        completion(succeeded, error);
+    }];
+}
 
 @end

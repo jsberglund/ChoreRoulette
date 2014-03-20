@@ -10,5 +10,8 @@
 #import <Parse/Parse.h>
 
 @interface MainViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *taskNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taskValueLabel;
+@property (weak, nonatomic) IBOutlet UIButton *selectTaskButton;
 
 @end
