@@ -8,6 +8,8 @@
 
 #import "TasksListViewController.h"
 #import "CRLTask.h"
+#import <MMDrawerController/MMDrawerBarButtonItem.h>
+#import "UIViewController+MMDrawerController.h"
 
 @interface TasksListViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -49,7 +51,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self setupLeftMenuButton];
+}
+
+-(void)setupLeftMenuButton{
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
+}
+
+#pragma mark - Button Handlers
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

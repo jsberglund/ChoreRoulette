@@ -4,6 +4,7 @@
 #import "ParseStarterProjectViewController.h"
 #import "MainViewController.h"
 #import "SecretConstants.h"
+#import "MenuViewController.h"
 
 #import "CRLTask.h"
 #import "CRLTeam.h"
@@ -74,18 +75,13 @@
     UIViewController *mainViewCont = [[MainViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewCont];
     
-    UIViewController * leftSideDrawerViewController = [[UIViewController alloc] init];
-    
-//    self.drawerController = [[MMDrawerController alloc]
-//                                             initWithCenterViewController:navigationController
-//                                             leftDrawerViewController:leftSideDrawerViewController];
+    UIViewController * leftSideDrawerViewController = [[MenuViewController alloc] init];
     
 
-    UINavigationController * leftSideNavController = [[UINavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
-//    [leftSideNavController setRestorationIdentifier:@"MMExampleLeftNavigationControllerRestorationKey"];
+//    UINavigationController * leftSideNavController = [[UINavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
     self.drawerController = [[MMDrawerController alloc]
                              initWithCenterViewController:navigationController
-                             leftDrawerViewController:leftSideNavController];
+                             leftDrawerViewController:leftSideDrawerViewController];
     
     [self.drawerController setShowsShadow:NO];
     
@@ -94,15 +90,6 @@
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     
-//    [self.drawerController
-//     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-//         MMDrawerControllerDrawerVisualStateBlock block;
-//         block = [[MMExampleDrawerVisualStateManager sharedManager]
-//                  drawerVisualStateBlockForDrawerSide:drawerSide];
-//         if(block){
-//             block(drawerController, drawerSide, percentVisible);
-//         }
-//     }];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
                                           green:173.0/255.0
@@ -111,9 +98,6 @@
     [self.window setTintColor:tintColor];
     [self.window setRootViewController:self.drawerController];
     
-    
-    
-//    self.window.rootViewController = drawerController;
     [self.window makeKeyAndVisible];
 }
 /*
